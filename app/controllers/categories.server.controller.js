@@ -54,6 +54,20 @@ exports.read = function(req, res) {
  */
 exports.update = function(req, res) {
 
+  var category = req.category;
+
+  category = _.extend(category, req.body);
+
+  category.save(function(err) {
+    if (err) {
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      res.json(category);
+    }
+  });
+  
 };
 
 /**
