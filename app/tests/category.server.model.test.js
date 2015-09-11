@@ -16,7 +16,7 @@ var user, category;
 /**
  * Unit tests
  */
-describe('Category Model Unit Tests:', function() {
+describe('Category Model:', function() {
 	beforeEach(function(done) {
 		user = new User({
 			firstName: 'Full',

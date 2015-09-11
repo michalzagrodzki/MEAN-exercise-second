@@ -18,19 +18,21 @@ function validateLength (v) {
  * Category Schema
  */
 var CategorySchema = new Schema({
-  // the property name
+  // the property creation date
   created: {
     // types are defined e.g. String, Date, Number (http://mongoosejs.com/docs/guide.html)
     type: Date,
     // default values can be set
     default: Date.now
   },
+  // the property description
   description: {
     type: String,
     default: '',
     // types have specific functions e.g. trim, lowercase, uppercase (http://mongoosejs.com/docs/api.html#schema-string-js)
     trim: true
   },
+  // the property name
   name: {
     type: String,
     default: '',
