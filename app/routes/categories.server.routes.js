@@ -4,7 +4,12 @@ module.exports = function(app) {
 
   var categories = require('../../app/controllers/categories.server.controller');
 
-  // route for GET categories
+  // routes for Category model
   app.route('/categories')
-    .get(categories.list);
+
+    // route for GET categories
+    .get(categories.list)
+
+    // route for POST categories
+    .post(categories.create)
 };
