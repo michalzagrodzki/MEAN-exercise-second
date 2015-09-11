@@ -11,5 +11,9 @@ module.exports = function(app) {
     .get(categories.list)
 
     // route for POST categories
-    .post(categories.create)
+    .post(categories.create);
+
+    // route for GET single category
+    app.route('/categories/:categoryId')
+      .get(categories.read);
 };
