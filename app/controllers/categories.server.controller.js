@@ -67,7 +67,7 @@ exports.update = function(req, res) {
       res.json(category);
     }
   });
-  
+
 };
 
 /**
@@ -75,6 +75,18 @@ exports.update = function(req, res) {
  */
 exports.delete = function(req, res) {
 
+  var category = req.category;
+
+  category.remove(function(err) {
+    if (err) {
+      return res.status(400).send({
+        message: errorHandler.getErrorMessage(err)
+      });
+    } else {
+      res.json(category);
+    }
+  });
+  
 };
 
 /**
