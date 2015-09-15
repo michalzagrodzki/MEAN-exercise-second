@@ -7,20 +7,21 @@ module.exports = function(app) {
   // routes for Categories
   app.route('/categories')
 
-    // route for GET categories
+    // route for GET Categories
     .get(categories.list)
 
-    // route for POST categories
+    // route for POST Categories
     .post(categories.create);
 
   // routes for single Category
-    app.route('/categories/:categoryId')
-      // route for GET single category
-      .get(categories.read)
+  app.route('/categories/:categoryId')
 
-      // route for UPDATE single category
-      .put(categories.update)
+    // route for GET single Category
+    .get(categories.read)
 
-      // route for DELETE single category
-      .delete(categories.delete)
+    // route for UPDATE single Category
+    .put(categories.update)
+
+    // route for DELETE single Category
+    .delete(categories.delete)
 };

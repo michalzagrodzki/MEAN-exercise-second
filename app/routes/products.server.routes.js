@@ -4,25 +4,25 @@ module.exports = function(app) {
 
   var products = require('../../app/controllers/products.server.controller');
 
-  // route for products
+  // route for listing Products
   app.route('/products')
 
-    // route for GET products
+    // route for GET Products
     .get(products.list)
 
-    // route for POST products
+    // route for POST Products
     .post(products.create);
 
-  // route for single product
+  // route for single Product
   app.route('/products/:productId')
 
-    // route for GET single product
+    // route for GET single Product
     .get(products.read)
 
-    // route for UPDATE single product
+    // route for UPDATE single Product
     .put(products.update)
 
-    // route for DELETE single product
+    // route for DELETE single Product
     .delete(products.delete);
 
 };
