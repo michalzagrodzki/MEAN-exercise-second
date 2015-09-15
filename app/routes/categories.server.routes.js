@@ -28,5 +28,5 @@ module.exports = function(app) {
 
   // binding article middleware
   app.param('categoryId', categories.categoryByID);
-  
+
 };
