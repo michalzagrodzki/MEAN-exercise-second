@@ -27,6 +27,6 @@ module.exports = function(app) {
     .delete(users.requiresLogin, products.delete);
 
   // binding article middleware
-  app.param('productId', products.productByID);
+  //app.param('productId', products.productByID);
 
 };
