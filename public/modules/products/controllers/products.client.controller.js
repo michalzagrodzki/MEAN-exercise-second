@@ -8,5 +8,24 @@ angular.module('products').controller('ProductsController', ['$scope', 'Products
       $scope.products = Products.query();
     };
 
+    // CREATE new Category
+    $scope.create = function() {
+      // Create new Product object
+      var product = new Product ({
+        name: this.name,
+        description: this.description
+      });
+
+      // Redirect after save
+      product.$save(function(response) {
+        $location.path('products/' + response._id);
+
+        // Clear form fields
+        $scope.name = '';
+      }, function(errorResponse) {
+        $scope.error = errorResponse.data.message;
+      });
+    };
+
 	}
 ]);
