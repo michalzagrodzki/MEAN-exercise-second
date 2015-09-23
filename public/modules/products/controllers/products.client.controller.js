@@ -1,7 +1,7 @@
 'use strict';
 
-angular.module('products').controller('ProductsController', ['$scope', 'Products',
-	function($scope, Products) {
+angular.module('products').controller('ProductsController', ['$scope', '$stateParams', '$location', 'Products',
+	function($scope, $stateParams, $location, Products) {
 
     // List Categories
     $scope.find = function() {

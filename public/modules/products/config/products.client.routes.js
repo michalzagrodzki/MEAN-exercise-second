@@ -14,6 +14,11 @@ angular.module('products').config(['$stateProvider',
     state('listProducts', {
       url: '/products',
       templateUrl: 'modules/products/views/products.client.view.html'
+    }).
+    // READ Single Product
+    state('viewProduct', {
+      url: '/products/:productId',
+      templateUrl: 'modules/products/views/view-product.client.view.html'
     });
 	}
 ]);
