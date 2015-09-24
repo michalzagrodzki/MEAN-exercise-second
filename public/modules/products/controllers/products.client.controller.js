@@ -12,8 +12,13 @@ angular.module('products').controller('ProductsController', ['$scope', '$statePa
     $scope.create = function() {
       // Create new Product object
       var product = new Product ({
+        category: this.category,
         name: this.name,
-        description: this.description
+        quantityPerUnit: this.quantityPerUnit,
+        unitPrice: this.unitPrice,
+        unitsInStock: this.unitsInStock,
+        unitsOnOrder: this.unitsOnOrder,
+        discontinued: this.discontinued
       });
 
       // Redirect after save
