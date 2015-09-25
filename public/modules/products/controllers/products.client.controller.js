@@ -3,12 +3,12 @@
 angular.module('products').controller('ProductsController', ['$scope', '$stateParams', '$location', 'Products',
 	function($scope, $stateParams, $location, Products) {
 
-    // List Categories
+    // List Products
     $scope.find = function() {
       $scope.products = Products.query();
     };
 
-    // CREATE new Category
+    // CREATE new Product
     $scope.create = function() {
       // Create new Product object
       var product = new Products ({
@@ -28,6 +28,13 @@ angular.module('products').controller('ProductsController', ['$scope', '$statePa
         $scope.name = '';
       }, function(errorResponse) {
         $scope.error = errorResponse.data.message;
+      });
+    };
+
+    // READ single Product
+    $scope.findOne = function() {
+      $scope.product = Products.get({
+        productId: $stateParams.productId
       });
     };
 
