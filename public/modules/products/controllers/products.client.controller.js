@@ -17,8 +17,7 @@ angular.module('products').controller('ProductsController', ['$scope', '$statePa
         quantityPerUnit: this.quantityPerUnit,
         unitPrice: this.unitPrice,
         unitsInStock: this.unitsInStock,
-        unitsOnOrder: this.unitsOnOrder,
-        discontinued: this.discontinued
+        unitsOnOrder: this.unitsOnOrder
       });
 
       // Redirect after save
