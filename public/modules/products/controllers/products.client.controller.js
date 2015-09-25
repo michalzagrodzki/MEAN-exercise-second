@@ -3,9 +3,16 @@
 angular.module('products').controller('ProductsController', ['$scope', '$stateParams', '$location', 'Products',
 	function($scope, $stateParams, $location, Products) {
 
+    var appendCategory = function appendCategory(p) {
+      p.category = $filter('filter')($scope.categories, {_id: p.category})[0];
+    };
+
     // List Products
     $scope.find = function() {
-      $scope.products = Products.query();
+      Products.query(function loadedProducts(products) {
+        products.forEach(appendCategory);
+        $scope.products = products;
+      });
     };
 
     // CREATE new Product
