@@ -11,7 +11,7 @@ angular.module('products').controller('ProductsController', ['$scope', '$statePa
     // CREATE new Category
     $scope.create = function() {
       // Create new Product object
-      var product = new Product ({
+      var product = new Products ({
         category: this.category,
         name: this.name,
         quantityPerUnit: this.quantityPerUnit,
